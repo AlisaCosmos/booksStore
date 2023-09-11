@@ -2,7 +2,7 @@
 
 # Демо
 
-https:
+https://books-store-steel.vercel.app/
 
 # Стек
 
