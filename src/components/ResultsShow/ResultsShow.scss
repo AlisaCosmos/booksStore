@@ -1,5 +1,11 @@
 .resultsShow {
   margin-top: 60px;
+  position: relative;
+  &__img {
+    position: absolute;
+    z-index: -1;
+    left: -100px;
+  }
   &__title {
     margin-bottom: 40px;
   }

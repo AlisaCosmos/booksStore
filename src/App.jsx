@@ -8,7 +8,7 @@ function App() {
   const ref = useRef(null);
   return (
     <div className="App" ref={ref}>
-      <header className="App-header">
+      <header className="container">
         <Header />
       </header>
       <main className="container">

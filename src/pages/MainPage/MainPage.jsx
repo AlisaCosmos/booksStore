@@ -27,7 +27,7 @@ export default function MainPage({ refapp }) {
   return (
     <div className="container__row">
       <ScreenFirst refapp={refapp} />
-      <ResultsShow />
+      <ResultsShow refapp={refapp} />
     </div>
   );
 }
