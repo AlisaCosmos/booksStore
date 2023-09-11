@@ -1,0 +1,89 @@
+@import '../../styles/vars';
+
+.resultsItem {
+  width: 46%;
+  height: 400px;
+  background-color: #fff;
+  padding: 55px 57px 67px;
+  border-radius: 20px;
+  font-family: $generalFont;
+  font-weight: 500;
+  font-size: 16px;
+  &__inner {
+    display: flex;
+    flex-direction: row-reverse;
+    //align-items: center;
+  }
+  &__inner_col {
+    width: 50%;
+  }
+  &__img_inner {
+    position: relative;
+    cursor: pointer;
+    :hover {
+      box-shadow: 0 20px 60px #15254233;
+    }
+  }
+  &__img {
+    position: absolute;
+    //top: -26px;
+    //right: 0px;
+    width: 100%;
+    height: 380px;
+
+    border-radius: 20px;
+    box-shadow: 0 10px 40px #15254233;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+  }
+  &__desc {
+    padding: 10px 10px;
+    max-height: 340px;
+    overflow: hidden;
+    color: $mainFontColors;
+    font-family: $generalFont;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    font-family: $generalTitleFont;
+    font-weight: 700;
+    font-size: 20px;
+    color: $mainTitleFontColor;
+    text-transform: uppercase;
+  }
+  &__authors {
+    padding-bottom: 10px;
+    color: $mainFontColors;
+    font-family: $generalFont;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__categories {
+    padding-bottom: 10px;
+    color: $mainFontColors;
+    font-family: $generalFont;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  &_publisher {
+    padding-bottom: 10px;
+    color: $mainFontColors;
+    font-family: $generalFont;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  &__description {
+    padding-bottom: 10px;
+    color: $mainFontColors;
+    font-family: $generalFont;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}

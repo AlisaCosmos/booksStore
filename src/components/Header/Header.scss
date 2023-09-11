@@ -1,0 +1,36 @@
+@import '../../styles/vars';
+
+.header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 130px;
+  }
+  &__logo_wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__logo__img {
+    height: calc($index * 3);
+    svg {
+      color: $titleFontColor;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__logo__text {
+    font-family: $generalFont;
+    color: $mainFontColors;
+    font-size: calc($index * 3);
+
+    font-weight: 500;
+  }
+  &__logo_textBolb {
+    font-family: $generalFont;
+    color: $mainTitleFontColor;
+    font-weight: 800;
+  }
+}

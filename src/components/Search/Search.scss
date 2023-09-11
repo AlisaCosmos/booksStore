@@ -1,0 +1,95 @@
+@import '../../styles/vars';
+
+.search {
+  display: flex;
+
+  align-items: center;
+  position: relative;
+  form {
+    width: 100%;
+    display: flex;
+    height: 46px;
+    position: relative;
+  }
+  &__icon {
+    color: $titleFontColor;
+    width: 40px !important;
+    height: 40px !important;
+    position: absolute;
+    top: 15px;
+    left: 29px;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+  &__icon__close {
+    color: $titleFontColor;
+    width: 40px !important;
+    height: 40px !important;
+    position: absolute;
+    top: 15px;
+    right: 176px;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+  &__input {
+    font-family: $generalFont;
+    width: 100%;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4em;
+    padding: 33px 0 33px 69px;
+    border-style: solid;
+    border-width: 0;
+    border-radius: 35px;
+    overflow: hidden;
+    background-color: rgba(21, 37, 66, 0.1);
+    &:focus {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    &::placeholder {
+      font-family: $generalFont;
+      font-size: 20px;
+      font-weight: 500;
+      color: #444;
+    }
+  }
+
+  .search__btn {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    background-color: $titleFontColor;
+
+    box-shadow: 10px 10px 30px #876fe533;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    height: 55px;
+    width: 155px;
+    border-radius: 30px;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+  input[type='submit'] {
+    font-family: $generalFont;
+    font-size: 20px;
+    font-weight: 500;
+
+    color: #fff;
+    vertical-align: top;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.45s;
+  }
+}
