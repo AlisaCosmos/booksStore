@@ -4,6 +4,9 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import ResultsShow from '../../components/ResultsShow/ResultsShow';
 import ScreenFirst from '../../components/ScreenFirst/ScreenFirst';
+import Categories from '../../components/Categories/Categories';
+import Sort from '../../components/Sort/Sort';
+import './MainPage.scss';
 
 export default function MainPage({ refapp }) {
   const dispatch = useDispatch();
@@ -25,8 +28,13 @@ export default function MainPage({ refapp }) {
   }, []);
 
   return (
-    <div className="container__row">
+    <div className="mainPage container__row">
       <ScreenFirst refapp={refapp} />
+      <div className="mainPage__filtre">
+        <Categories />
+        <Sort />
+      </div>
+
       <ResultsShow refapp={refapp} />
     </div>
   );
