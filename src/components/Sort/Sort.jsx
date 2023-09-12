@@ -2,11 +2,14 @@ import { useState } from 'react';
 import './Sort.scss';
 import { setSortActivId } from '../../redux/slices/filtersSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import * as cx from 'classnames';
 
 export default function Sort() {
   const dispatch = useDispatch();
+
   const { sortActivId } = useSelector((state) => state.filters);
   const [openPopup, setOpenPopup] = useState(false);
+  const classTogSvg = cx('sort__svg', { 'sort__svg sort__svg_open': openPopup });
 
   const sortList = [
     { name: 'Relevance', sortProperty: 'rating' },
@@ -21,6 +24,7 @@ export default function Sort() {
     <div className="sort">
       <div className="sort__label">
         <svg
+          className={classTogSvg}
           width="10"
           height="6"
           viewBox="0 0 10 6"

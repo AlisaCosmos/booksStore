@@ -3,6 +3,9 @@
 .sort {
   position: relative;
   margin-bottom: 50px;
+  &__svg_open {
+    transform: rotate(180deg);
+  }
   &__label {
     display: flex;
     justify-content: end;

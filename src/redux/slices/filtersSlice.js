@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   searchValue: '',
-  selectedCategoryUseId: 0,
+  selectedCategoryUseId: { name: 'All', categoriesProperty: 'All' },
   sortActivId: { name: 'Relevance', sortProperty: 'rating' },
 };
 
@@ -17,7 +17,7 @@ export const filtersSlice = createSlice({
       state.selectedCategoryUseId = action.payload;
     },
     setSortActivId(state, action) {
-      state.sort = action.payload;
+      state.sortActivId = action.payload;
     },
   },
 });

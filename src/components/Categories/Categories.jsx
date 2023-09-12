@@ -4,6 +4,16 @@ import './Categories.scss';
 
 export default function Categories() {
   const categoriesUse = ['All', 'Art', 'Biography', 'Computers', 'History', 'Medical', 'Poetry'];
+  const categoriesList = [
+    { name: 'All', categoriesProperty: 'All' },
+    { name: 'Art', categoriesProperty: 'Art' },
+    { name: 'Biography', categoriesProperty: 'Biography' },
+    { name: 'Computers', categoriesProperty: 'Computers' },
+    { name: 'History', categoriesProperty: 'History' },
+    { name: 'Medical', categoriesProperty: 'Medical' },
+    { name: 'Poetry', categoriesProperty: 'Poetry' },
+  ];
+
   const dispatch = useDispatch();
   const { selectedCategoryUseId } = useSelector((state) => state.filters);
 
@@ -14,18 +24,18 @@ export default function Categories() {
       </div>
       <div>
         <ul className="categories__list categories__listType">
-          {categoriesUse.map((item, index) => (
+          {categoriesList.map((obj, index) => (
             <li
               key={index}
               onClick={() => {
-                dispatch(setSelectedCategoryUseId(index));
+                dispatch(setSelectedCategoryUseId(obj));
               }}
               className={
-                selectedCategoryUseId === index
+                selectedCategoryUseId.categoriesProperty === obj.categoriesProperty
                   ? 'categories__item categories__item_active'
                   : 'categories__item'
               }>
-              {item}
+              {obj.name}
             </li>
           ))}
         </ul>

@@ -1,7 +1,7 @@
 import { fetchBooks, setBooks } from '../../redux/slices/booksSlice';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ResultsShow from '../../components/ResultsShow/ResultsShow';
 import ScreenFirst from '../../components/ScreenFirst/ScreenFirst';
 import Categories from '../../components/Categories/Categories';
@@ -10,6 +10,8 @@ import './MainPage.scss';
 
 export default function MainPage({ refapp }) {
   const dispatch = useDispatch();
+
+  const { selectedCategoryUseId } = useSelector((state) => state.filters);
   const apiKey = 'AIzaSyDNYa1yLjiOFlS3xc2rr9SiWXhPJhjpWqg';
   //функция получает книги и сохраняет
   const getBooks = async () => {
@@ -19,13 +21,14 @@ export default function MainPage({ refapp }) {
     await dispatch(
       fetchBooks({
         apiKey,
+        selectedCategoryUseId,
       }),
     );
   };
 
   useEffect(() => {
     getBooks();
-  }, []);
+  }, [selectedCategoryUseId]);
 
   return (
     <div className="mainPage container__row">
