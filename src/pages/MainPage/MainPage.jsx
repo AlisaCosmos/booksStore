@@ -11,8 +11,9 @@ import './MainPage.scss';
 export default function MainPage({ refapp }) {
   const dispatch = useDispatch();
 
-  const { selectedCategoryUseId } = useSelector((state) => state.filters);
+  const { selectedCategoryUseId, searchValue } = useSelector((state) => state.filters);
   const apiKey = 'AIzaSyDNYa1yLjiOFlS3xc2rr9SiWXhPJhjpWqg';
+  const maxResults = '&maxResults=40';
   //функция получает книги и сохраняет
   const getBooks = async () => {
     //ХОТИМ ДОЖТАТЬСЯ ОТВЕТА
@@ -22,17 +23,26 @@ export default function MainPage({ refapp }) {
       fetchBooks({
         apiKey,
         selectedCategoryUseId,
+        maxResults,
+        searchValue,
       }),
     );
   };
 
   useEffect(() => {
     getBooks();
-  }, [selectedCategoryUseId]);
+  }, [selectedCategoryUseId, searchValue]);
+
+  // get Books onClikc button
+  const handelSearch = async (e) => {
+    e.preventDefault();
+    //запрос на бек
+    getBooks();
+  };
 
   return (
     <div className="mainPage container__row">
-      <ScreenFirst refapp={refapp} />
+      <ScreenFirst refapp={refapp} handelSearch={handelSearch} />
       <div className="mainPage__filtre">
         <Categories />
         <Sort />

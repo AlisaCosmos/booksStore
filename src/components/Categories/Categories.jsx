@@ -5,7 +5,7 @@ import './Categories.scss';
 export default function Categories() {
   const categoriesUse = ['All', 'Art', 'Biography', 'Computers', 'History', 'Medical', 'Poetry'];
   const categoriesList = [
-    { name: 'All', categoriesProperty: 'All' },
+    { name: 'All', categoriesProperty: '' },
     { name: 'Art', categoriesProperty: 'Art' },
     { name: 'Biography', categoriesProperty: 'Biography' },
     { name: 'Computers', categoriesProperty: 'Computers' },

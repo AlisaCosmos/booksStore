@@ -2,13 +2,15 @@ import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchBooks = createAsyncThunk('fetchBooks/fetchBooksStatus', async (papams) => {
-  const { apiKey, searchValue, selectedCategoryUseId } = papams;
+  const { apiKey, searchValue, selectedCategoryUseId, maxResults } = papams;
   const { categoriesProperty } = selectedCategoryUseId;
+  const getCategories = `subject:${selectedCategoryUseId.categoriesProperty}`;
+  const getBooks = `${!!searchValue ? searchValue : null}`;
 
   const { data } = await axios.get(
     //https://www.googleapis.com/books/v1/volumes?q=flowers&filter=free-ebooks&key=${apiKey}
     //`https://www.googleapis.com/books/v1/volumes?q=${searchValue}&filter=free-ebooks&key=${apiKey}`
-    `https://www.googleapis.com/books/v1/volumes?q=${searchValue}&categories=${categoriesProperty}&filter=free-ebooks&key=${apiKey}`,
+    `https://www.googleapis.com/books/v1/volumes?q=${getCategories}+${getBooks}&${apiKey}${maxResults} `,
   );
   console.log(data, 'data в редаксе');
   return data.items;

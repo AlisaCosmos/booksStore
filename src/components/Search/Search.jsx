@@ -5,29 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBooks } from '../../redux/slices/booksSlice';
 import './Search.scss';
 
-export default function Search() {
+export default function Search({ handelSearch }) {
   const dispatch = useDispatch();
   const { searchValue } = useSelector((state) => state.filters);
-  const apiKey = 'AIzaSyDNYa1yLjiOFlS3xc2rr9SiWXhPJhjpWqg';
-  //функция получает книги и сохраняет
-  const getBooks = async () => {
-    //ХОТИМ ДОЖТАТЬСЯ ОТВЕТА
-    //дай данные и сохрани первый запрос
 
-    await dispatch(
-      fetchBooks({
-        apiKey,
-        searchValue,
-      }),
-    );
-  };
-  // get Books onClikc button
-  const handelSearch = async (e) => {
-    e.preventDefault();
-    //запрос на бек
-    getBooks();
-  };
-  //
   const onChangeInput = (event) => {
     dispatch(setSearchValue(event.target.value));
   };

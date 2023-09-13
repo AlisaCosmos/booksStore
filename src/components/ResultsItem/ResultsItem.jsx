@@ -2,15 +2,13 @@ import { Link } from 'react-router-dom';
 import './ResultsItem.scss';
 
 export default function ResultsItem({ data: { volumeInfo } }) {
+  let thumbnail = volumeInfo.imageLinks && volumeInfo.imageLinks.smallThumbnail;
   return (
     <div className="resultsItem">
       <div className="resultsItem__inner">
         <Link className="resultsItem__img_inner resultsItem__inner_col">
           <div className="resultsItem__img">
-            <img
-              src={`${volumeInfo.imageLinks.smallThumbnail}`}
-              alt={`img books ${volumeInfo.title}`}
-            />
+            <img src={`${thumbnail}`} alt={`img books ${volumeInfo.title}`} />
           </div>
         </Link>
 

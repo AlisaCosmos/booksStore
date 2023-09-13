@@ -10,7 +10,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 
-export default function ScreenFirst({ refapp }) {
+export default function ScreenFirst({ refapp, handelSearch }) {
   gsap.registerPlugin(ScrollTrigger);
   //title
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function ScreenFirst({ refapp }) {
             </h1>
           </div>
           <div className="screenFirst__search">
-            <Search />
+            <Search handelSearch={handelSearch} />
           </div>
         </div>
         <div className="screenFirst__colLeft">

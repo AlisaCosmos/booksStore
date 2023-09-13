@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   searchValue: '',
-  selectedCategoryUseId: { name: 'All', categoriesProperty: 'All' },
+  selectedCategoryUseId: { name: 'All', categoriesProperty: '' },
   sortActivId: { name: 'Relevance', sortProperty: 'rating' },
 };
 
